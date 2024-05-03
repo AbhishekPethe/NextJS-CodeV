@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Specific notes inside each folders
 
-## Getting Started
+__SPECIAL FILES__
 
-First, run the development server:
+- page.tsx
+- layout.tsx
+- template.tsx
+- not-found.tsx
+- loading.tsx
+- error.tsx
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+__ERROR__
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+error.tsx
+- Automatically wrap a route segment and its nested children in a React Error Boundary
+- Create error Ul tailored to specific segments using the file-system hierarchy to adjust granularity
+- Isolate errors to affected segments while keeping the rest of the application functional
+- Add functionality to attempt to recover from an error without a full page reload
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+__COMPONENT HIERARCHY__
 
-To learn more about Next.js, take a look at the following resources:
+layout->template->error->loading->not-found->page
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+__ERROR HANDLING__
 
-## Deploy on Vercel
+- Error handling is a crucial task
+- we use error.tsx for particular routes
+- we can use reset in error to try again
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+--nested route errors--
+- Errors bubble up to the closest parent error boundary
+- An error.ts file will cater to errors for all its nested child segments
+- By positioning error.ts files at different levels in the nested folders of a route, you
+  can achieve a more granular level of error handling.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

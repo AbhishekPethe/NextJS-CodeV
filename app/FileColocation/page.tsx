@@ -1,5 +1,6 @@
 import React from 'react'
 import LineChart from './line-chart'
+import Link from 'next/link'
 
 
 const BarChart = () => {
@@ -14,6 +15,8 @@ const page = () => {
           {/* unless we specify the components in this return like below , it wont be shown in the page  */}
           {/* <BarChart />
           <LineChart /> */}
+
+         
           
       </div>
   )

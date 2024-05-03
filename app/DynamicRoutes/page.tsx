@@ -17,6 +17,16 @@ const productList = () => {
                     )
                 })
             }
+                
+
+                {/* replace tag  */}
+                
+                {/* <Link href="/DynamicRoutes/1" >Product No : 1</Link>
+                <Link href="/DynamicRoutes/2" >Product No : 2</Link>
+                <Link href="/DynamicRoutes/3" replace >Product No : 3</Link>
+                <Link href="/DynamicRoutes/4" >Product No : 4</Link> */}
+
+
             </div>
         </div>
     )
